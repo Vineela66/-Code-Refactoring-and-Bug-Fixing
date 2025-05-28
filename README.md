@@ -22,4 +22,23 @@ flask-notes-app/
  templates/
  home.html        # HTML form to input and display notes
 
+home.html (Template)
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes App</title>
+</head>
+<body>
+    <h1>My Notes</h1>
+    <form method="POST">
+        <input type="text" name="note" placeholder="Enter your note" required>
+        <button type="submit">Add Note</button>
+    </form>
+    <ul>
+        {% for note in notes %}
+            <li>{{ note }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
